@@ -46,8 +46,9 @@ void table(char tab[9]) // fucntion for printing the xo table
 
 
 
-char winner=' ' ; // global variable used hir to prevent using pointer
-
+char winner=' ' ; // global variable used hir to prevent using pointerin
+int up=30,down=31,right=16 ; // i use this value to print some chars from ascii-table so you can consider them as special-char
+                            // got to menu function and you will understand how i use them
 void checkwinner(char t[9]) // this function only check winner in solo-mode
 {
 
@@ -236,7 +237,7 @@ void solo_player()
     }
 
     winner=' ' ;
-    Sleep(4000) ;
+    Sleep(2000) ;
     cls();
     menu();
 
@@ -296,7 +297,7 @@ void Multiplayer()
     }
 
     winner=' ' ;
-    Sleep(4000) ;
+    Sleep(2000) ;
     cls() ;
     menu() ;
 }      //end of multiplayer round
@@ -306,13 +307,12 @@ void Multiplayer()
 
 void menu()
 {
-
     gotoxy(4,1);
-    printf("") ;
+    printf("%c",up) ;
     gotoxy(6,2);
     printf("MENU") ;
     gotoxy(4,2) ;
-    printf("") ;
+    printf("%c",down) ;
     char u ;
     int i,j ;
     i=7 ;
@@ -320,7 +320,7 @@ void menu()
     gotoxy(10,5) ;
     printf("Multiplayer mode") ;
     gotoxy(i,j) ;
-    printf("") ;
+    printf("%c",right) ;
     gotoxy(10,7) ;
     printf("Solo mode") ;
     gotoxy(10,9) ;
@@ -334,7 +334,7 @@ void menu()
             gotoxy(i,j) ;
             printf(" ") ;
             gotoxy(i,j+2) ;
-            printf("") ;
+            printf("%c",right) ;
             j=j+2 ;
 
         }
@@ -343,7 +343,7 @@ void menu()
             gotoxy(i,j) ;
             printf(" ") ;
             gotoxy(i,j+2) ;
-            printf("") ;
+            printf("%c",right) ;
             j=j+2 ;
         }
 
@@ -352,7 +352,7 @@ void menu()
             gotoxy(i,j) ;
             printf(" ") ;
             gotoxy(i,j-2) ;
-            printf("") ;
+            printf("%c",right) ;
             j=j-2 ;
 
         }
@@ -362,7 +362,7 @@ void menu()
             gotoxy(i,j) ;
             printf(" ") ;
             gotoxy(i,j-2) ;
-            printf("") ;
+            printf("%c",right) ;
             j=j-2 ;
         }
 
@@ -399,7 +399,7 @@ void menu()
         gotoxy(10,5) ;
         printf("YES") ;
         gotoxy(8,5) ;
-        printf("") ;
+        printf("%c",right) ;
         gotoxy(10,7) ;
         printf("NO") ;
 
@@ -412,7 +412,7 @@ void menu()
                 gotoxy(n,b) ;
                 printf(" ") ;
                 gotoxy(n,b+2) ;
-                printf("") ;
+                printf("%c",right) ;
                 b=b+2 ;
             }
 
@@ -421,7 +421,7 @@ void menu()
                 gotoxy(n,b) ;
                 printf(" ") ;
                 gotoxy(n,b-2) ;
-                printf("") ;
+                printf("%c",right) ;
                 b=b-2 ;
             }
             else if(f==' ')
@@ -437,6 +437,7 @@ void menu()
         else
         {
             cls() ;
+
         }
 
     }
